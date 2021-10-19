@@ -1,7 +1,7 @@
-package com.luv2code.springboot.cruddemo.service;
+package com.employee.springboot.service;
 
-import com.luv2code.springboot.cruddemo.dao.EmployeeRepository;
-import com.luv2code.springboot.cruddemo.entity.Employee;
+import com.employee.springboot.dao.EmployeeRepository;
+import com.employee.springboot.entity.Employee;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,10 +26,10 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public Employee findById(int theId) {
-        // Optional is used to see if a given value is present
+
         Optional<Employee> result = employeeRepository.findById(theId);
         Employee theEmployee = null;
-        //isPresent() is used to see if there is a value present that returns true
+
         if (result.isPresent()) {
             theEmployee = result.get();
         } else {
